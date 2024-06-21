@@ -36,7 +36,7 @@ LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                    
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, _______,  _______, KC_LCBR, KC_RCBR, _______, KC_LPRN,          KC_RPRN, XXXXXXX, KC_END,   KC_DOWN,   KC_PGDN,   KC_MINS, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______, _______,                    _______,  _______, _______
+                                    _______, _______, _______,                    KC_BSPC,  _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -103,5 +103,5 @@ const uint16_t PROGMEM esc_combo[] = {KC_SPACE, KC_ESC, COMBO_END};
 const uint16_t PROGMEM backspace_combo[] = {KC_ENTER, KC_BACKSPACE, COMBO_END};
 combo_t key_combos[] = {
     COMBO(esc_combo, KC_ESC),
-    COMBO(backspace_combo, KC_BACKSPACE), // keycodes with modifiers are possible too!
+    //COMBO(backspace_combo, KC_BACKSPACE), // keycodes with modifiers are possible too!
 };
