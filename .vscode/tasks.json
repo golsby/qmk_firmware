@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Flash QMK firmware",
+        "type": "shell",
+        "command": "qmk",
+        "args": ["flash", "-km", "brian-mac"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+        {
+            "label": "Compile QMK firmware",
+            "type": "shell",
+            "command": "qmk",
+            "args": ["compile", "-km", "brian-mac"],
+            "group": {
+            "kind": "build",
+            "isDefault": false
+            }
+        }
+    ]
+  }
