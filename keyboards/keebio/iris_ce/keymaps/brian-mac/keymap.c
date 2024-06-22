@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#define HOMEROW_MODS
 
 enum custom_layers {
      _QWERTY,
@@ -18,11 +19,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+  // Home row mods:
+#ifdef HOMEROW_MODS
+   KC_LCTL,LALT_T(KC_A),LCTL_T(KC_S),LGUI_T(KC_D),LSFT_T(KC_F),KC_G,               KC_H,RSFT_T(KC_J),LGUI_T(KC_K),RCTL_T(KC_L),RALT_T(KC_SCLN), KC_QUOT,
+#else
      KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+#endif
+  // KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ESC,          KC_BSPC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    TL_LOWR, KC_LGUI, KC_SPC,                    KC_ENT,  KC_RALT, TL_UPPR
+  // outer layer changes
+  //                                TL_LOWR, KC_LGUI, KC_SPC,                    KC_ENT,  KC_RALT, TL_UPPR
+  // inner layer changes
+                                    KC_LGUI, TL_LOWR, KC_SPC,                    KC_ENT,  TL_UPPR, KC_RALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -30,9 +40,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PGUP,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                            XXXXXXX, KC_HOME,   KC_UP,   KC_PGUP,   KC_P0,   KC_PGDN,
+LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                            KC_BSPC, KC_HOME,   KC_UP,   KC_PGUP,   KC_P0,   KC_PGDN,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+#ifdef HOMEROW_MODS
+_______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, LGUI(KC_LEFT),RSFT_T(KC_LEFT), LGUI_T(XXXXXXX),RCTL_T(KC_RIGHT),LGUI(KC_RIGHT
+), KC_PIPE,
+#else
      _______,  _______, _______, KC_LBRC, KC_RBRC, _______,                       LGUI(KC_LEFT),KC_LEFT, XXXXXXX,   KC_RIGHT,  LGUI(KC_RIGHT), KC_PIPE,
+#endif
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, _______,  _______, KC_LCBR, KC_RCBR, _______, KC_LPRN,          KC_RPRN, XXXXXXX, KC_END,   KC_DOWN,   KC_PGDN,   KC_MINS, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -99,11 +114,16 @@ void keyboard_post_init_user(void) {
   rgblight_sethsv_noeeprom(0, 0, 96); // sets the color to teal/cyan without saving
 }
 
+//A B C D fTHf
+
+
 const uint16_t PROGMEM esc_combo[] = {KC_SPACE, KC_ESC, COMBO_END};
 const uint16_t PROGMEM backspace_combo[] = {KC_ENTER, KC_BACKSPACE, COMBO_END};
-const uint16_t PROGMEM hj_combo[] = {KC_H, KC_J, COMBO_END};
+const uint16_t PROGMEM lower_hy_combo[] = {KC_BACKSPACE, LGUI(KC_LEFT), COMBO_END};
+const uint16_t PROGMEM hy_combo[] = {KC_H, KC_Y, COMBO_END};
 combo_t key_combos[] = {
     COMBO(esc_combo, KC_ESC),
-    COMBO(hj_combo, KC_BACKSPACE),
+    COMBO(hy_combo, KC_BACKSPACE),
+    COMBO(lower_hy_combo, KC_BACKSPACE),
     //COMBO(backspace_combo, KC_BACKSPACE), // keycodes with modifiers are possible too!
 };
