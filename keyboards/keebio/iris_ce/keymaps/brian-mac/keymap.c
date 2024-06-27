@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                            KC_BSPC, KC_HOME,   KC_UP,   KC_PGUP,   KC_P0,   KC_PGDN,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
 #ifdef HOMEROW_MODS
-_______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, LGUI(KC_LEFT),RSFT_T(KC_LEFT), LGUI_T(XXXXXXX),RCTL_T(KC_RIGHT),LGUI(KC_RIGHT
+_______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, LGUI(KC_LEFT),RSFT_T(KC_LEFT), LGUI_T(KC_DOWN),RCTL_T(KC_RIGHT),LGUI(KC_RIGHT
 ), KC_PIPE,
 #else
      _______,  _______, _______, KC_LBRC, KC_RBRC, _______,                       LGUI(KC_LEFT),KC_LEFT, XXXXXXX,   KC_RIGHT,  LGUI(KC_RIGHT), KC_PIPE,
@@ -105,13 +105,13 @@ _______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), ______
 
  [_MOUSE] = LAYOUT(  //  _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     QK_BOOT, TO(_MAC), TO(_WIN),  _______, _______, DT_PRNT,                            _______, _______, _______, _______, _______, QK_CLEAR_EEPROM,
+     QK_BOOT, TO(_MAC), TO(_WIN),  _______, _______, _______,                            _______, _______, _______, _______, _______, QK_CLEAR_EEPROM,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______,  _______, _______, DT_UP,                           KC_BTN3,  KC_WH_D, KC_MS_U, _______, _______, _______,
+     _______, _______, _______,  _______, _______, _______,                           KC_BTN3,  KC_WH_D, KC_MS_U, _______, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______, _______, _______, DT_DOWN,                            KC_BTN1,  KC_MS_L, _______, KC_MS_R, KC_BTN2, _______,
+     _______, _______, _______, KC_BTN2, KC_BTN1, _______,                            KC_BTN1,  KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN2, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______, _______, _______, _______, _______,          _______, _______, KC_WH_U,  KC_MS_D, _______, _______, _______,
+     _______, _______, _______, KC_BTN3, _______, _______, _______,          _______, _______, KC_WH_U,  KC_MS_D, _______, _______, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   _______, _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -176,4 +176,11 @@ combo_t key_combos[] = {
     COMBO(lower_bkspc_combo, KC_BACKSPACE),
     COMBO(lower_bkspc_combo2, KC_BACKSPACE),
     //COMBO(backspace_combo, KC_BACKSPACE), // keycodes with modifiers are possible too!
+};
+
+const key_override_t ctl_tab_to_alt_tab = ko_make_with_layers(MOD_MASK_CTRL, KC_TAB, LALT(KC_TAB), ~(1 << _WIN));
+
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&ctl_tab_to_alt_tab,
+	NULL
 };
