@@ -148,9 +148,9 @@ _______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), ______
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      RGB_TOG, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_SLASH, KC_BACKSLASH,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     RGB_VAI, KC_MPRV, KC_MNXT, KC_VOLU, KC_PGUP, KC_MINS,                            KC_EQL,  KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_ASTERISK, XXXXXXX,
+     RGB_VAI, KC_MPRV, KC_MNXT, KC_VOLU, _______, KC_MINS,                            KC_EQL,  KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_ASTERISK, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     RGB_VAD, KC_MSTP, KC_MPLY, KC_VOLD, KC_PGDN, KC_UNDS, KC_LPRN,          _______, KC_PLUS, KC_KP_1,  KC_KP_2, KC_KP_3, KC_PDOT, XXXXXXX,
+     RGB_VAD, KC_MSTP, KC_MPLY, KC_VOLD, _______, KC_UNDS, KC_LPRN,          _______, KC_PLUS, KC_KP_1,  KC_KP_2, KC_KP_3, KC_PDOT, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______,   MO(_MOUSE), _______,                    _______, _______, KC_KP_0
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -163,7 +163,7 @@ _______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), ______
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      QK_BOOT, TO(_MAC), TO(_WIN), TO(_RHINO), _______, _______,                            _______, _______, _______, _______, _______, QK_CLEAR_EEPROM,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______,  _______, _______, _______,                           KC_BTN3,  KC_WH_D, KC_MS_U, _______, _______, _______,
+     _______, DM_REC1, DM_PLY1,  _______, _______, _______,                           KC_BTN3,  KC_WH_D, KC_MS_U, _______, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, _______, _______, KC_BTN2, KC_BTN1, _______,                            KC_BTN1,  KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN2, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
@@ -191,7 +191,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     else if (layer_state_cmp(state, _RHINO)) {
         //rgblight_sethsv_noeeprom(180,120,96); // lavender
-        rgb_matrix_mode(RGB_MATRIX_CUSTOM_layer_3_effect);
+        rgb_matrix_mode(RGB_MATRIX_CUSTOM_hue_effect);
     }
     else if (layer_state_cmp(state, _MAC)) {
         //rgblight_sethsv_noeeprom(0,0,96);
@@ -213,7 +213,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LSFT_T(KC_F):
         case RSFT_T(KC_J):
-            return TAPPING_TERM - 75;
+            return TAPPING_TERM -80;
         default:
             return TAPPING_TERM;
     }
