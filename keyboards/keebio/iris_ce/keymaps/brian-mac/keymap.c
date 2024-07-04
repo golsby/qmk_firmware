@@ -36,13 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-  // Home row mods:
-#ifdef HOMEROW_MODS
    KC_LCTL,LALT_T(KC_A),LCTL_T(KC_S),LGUI_T(KC_D),LSFT_T(KC_F),KC_G,               KC_H,RSFT_T(KC_J),LGUI_T(KC_K),RCTL_T(KC_L),RALT_T(KC_SCLN), KC_QUOT,
-#else
-     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-#endif
-  // KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ESC,           KC_BSPC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -61,13 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-  // Home row mods:
-#ifdef HOMEROW_MODS
    KC_LCTL,LALT_T(KC_A),LGUI_T(KC_S),LCTL_T(KC_D),LSFT_T(KC_F),KC_G,               KC_H,RSFT_T(KC_J),RCTL_T(KC_K),LGUI_T(KC_L),RALT_T(KC_SCLN), KC_QUOT,
-#else
-     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-#endif
-  // KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ESC,           KC_BSPC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -85,13 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-  // Home row mods:
-#ifdef HOMEROW_MODS
    KC_LCTL,LALT_T(KC_A),LGUI_T(KC_S),LCTL_T(KC_D),LSFT_T(KC_F),KC_G,               KC_H,RSFT_T(KC_J),RCTL_T(KC_K),LGUI_T(KC_L),RALT_T(KC_SCLN), KC_QUOT,
-#else
-     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-#endif
-  // KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ESC,           KC_BSPC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -106,39 +88,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(  //  _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PGUP,
+     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, LGUI(LSFT(LCTL(KC_4))),
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                            KC_BSPC, KC_HOME,   KC_UP,   KC_PGUP,   KC_P0,   KC_PGDN,
+LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                            KC_BSPC, KC_HOME,   KC_UP,   KC_PGUP,   KC_P0,   _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-#ifdef HOMEROW_MODS
-_______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, LGUI(KC_LEFT),RSFT_T(KC_LEFT), LGUI_T(KC_DOWN),RCTL_T(KC_RIGHT),LGUI(KC_RIGHT
-), KC_PIPE,
-#else
-     _______,  _______, _______, KC_LBRC, KC_RBRC, _______,                       LGUI(KC_LEFT),KC_LEFT, XXXXXXX,   KC_RIGHT,  LGUI(KC_RIGHT), KC_PIPE,
-#endif
+_______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, LGUI(KC_LEFT),RSFT_T(KC_LEFT), LGUI_T(KC_DOWN),RCTL_T(KC_RIGHT),LGUI(KC_RIGHT), LGUI(KC_RIGHT),
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______,  _______, KC_LCBR, KC_RCBR, _______, KC_LPRN,          KC_RPRN, XXXXXXX, KC_END,   KC_DOWN,   KC_PGDN,   KC_BSLS, XXXXXXX,
+     _______, _______,  _______, KC_LCBR, KC_RCBR, _______, KC_ESC,          KC_BSPC, XXXXXXX, KC_END,   _______,   KC_PGDN,   KC_BSLS, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LGUI, _______, KC_TAB,                    KC_BSPC,  MO(_MOUSE), KC_RALT
+                                    KC_LGUI, _______, KC_SPC,                    KC_ENT,  MO(_MOUSE), KC_RALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
 
   [_WIN_LOWER] = LAYOUT(  //  _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PGUP,
+     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PSCR,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                            KC_BSPC, LCTL(KC_HOME),   KC_UP,   KC_PGUP,   KC_P0,   KC_PGDN,
+LGUI(KC_TAB),  _______, _______,  KC_LPRN, KC_RPRN, _______,                          KC_BSPC, LCTL(KC_HOME),KC_UP,KC_PGUP, KC_P0,  _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-#ifdef HOMEROW_MODS
-_______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, KC_HOME,RSFT_T(KC_LEFT), LGUI_T(KC_DOWN),RCTL_T(KC_RIGHT),KC_END, KC_PIPE,
-#else
-     _______,  _______, _______, KC_LBRC, KC_RBRC, _______,                       LGUI(KC_LEFT),KC_LEFT, XXXXXXX,   KC_RIGHT,  LGUI(KC_RIGHT), KC_PIPE,
-#endif
+_______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, KC_HOME,RSFT_T(KC_LEFT), LGUI_T(KC_DOWN),RCTL_T(KC_RIGHT),KC_END, KC_END,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______,  _______, KC_LCBR, KC_RCBR, _______, KC_LPRN,          KC_RPRN, XXXXXXX, LCTL(KC_END),   KC_DOWN,   KC_PGDN,   KC_BSLS, XXXXXXX,
+     _______, _______,  _______, KC_LCBR, KC_RCBR, _______, KC_ESC,          KC_BSPC, XXXXXXX, LCTL(KC_END),   _______,   KC_PGDN,   KC_BSLS, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LGUI, _______, KC_TAB,                    KC_BSPC,  MO(_MOUSE), KC_RALT
+                                    KC_LGUI, _______, KC_SPC,                    KC_ENT,  MO(_MOUSE), KC_RALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -148,11 +121,11 @@ _______,LALT_T(_______), LCTL_T(_______),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), ______
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      RGB_TOG, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_SLASH, KC_BACKSLASH,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     RGB_VAI, KC_MPRV, KC_MNXT, KC_VOLU, _______, KC_MINS,                            KC_EQL,  KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_ASTERISK, _______,
+     RGB_VAI, KC_MPRV, KC_MNXT, KC_VOLU, _______, KC_MINS,                            KC_PLUS,  KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_ASTERISK, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     RGB_VAD, KC_MSTP, KC_MPLY, KC_VOLD, _______, KC_UNDS, KC_LPRN,          _______, KC_PLUS, KC_KP_1,  KC_KP_2, KC_KP_3, KC_PDOT, _______,
+     RGB_VAD, KC_MSTP, KC_MPLY, KC_VOLD, _______, KC_UNDS, KC_ESC,          KC_BSPC,  KC_EQL,  KC_KP_1,  KC_KP_2, KC_KP_3, KC_PDOT, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______,   MO(_MOUSE), _______,                    _______, _______, KC_KP_0
+                                    _______,   MO(_MOUSE), KC_SPC,                KC_ENT, _______, KC_KP_0
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -180,30 +153,32 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     //rgblight_sethsv(140,0,255);
 
     if (layer_state_cmp(state, _MOUSE)) {
-        //rgblight_sethsv_noeeprom(127,80,96);  // cyan
+        rgb_matrix_mode(RGB_MATRIX_CUSTOM_mouse_effect);
     }
-    else if (layer_state_cmp(state, _LOWER) || layer_state_cmp(state, _WIN_LOWER)) {
-        //rgblight_sethsv_noeeprom(210,80,96);  // pink
-        // rgb_matrix_mode(RGB_MATRIX_CUSTOM_my_effect_blue);
+    else if (layer_state_cmp(state, _LOWER)) {
+        //rgb_matrix_mode(RGB_MATRIX_CUSTOM_lower_mac_effect);
+    }
+    else if (layer_state_cmp(state, _WIN_LOWER)) {
+        //rgb_matrix_mode(RGB_MATRIX_CUSTOM_lower_win_effect);
     }
     else if (layer_state_cmp(state, _RAISE)) {
-        //rgblight_sethsv_noeeprom( 21,80,96);  // orange
+        rgb_matrix_mode(RGB_MATRIX_CUSTOM_raise_effect);
     }
     else if (layer_state_cmp(state, _RHINO)) {
         //rgblight_sethsv_noeeprom(180,120,96); // lavender
-        rgb_matrix_mode(RGB_MATRIX_CUSTOM_hue_effect);
+        rgb_matrix_mode(RGB_MATRIX_CUSTOM_rhino_effect);
     }
     else if (layer_state_cmp(state, _MAC)) {
         //rgblight_sethsv_noeeprom(0,0,96);
-        rgb_matrix_mode(RGB_MATRIX_CUSTOM_layer_1_effect);
+        rgb_matrix_mode(RGB_MATRIX_CUSTOM_dynamic_effect);
     }
     else if (layer_state_cmp(state, _WIN)) {
         //rgblight_sethsv_noeeprom(0,80,96);  // red
-        rgb_matrix_mode(RGB_MATRIX_CUSTOM_layer_2_effect);
+        rgb_matrix_mode(RGB_MATRIX_CUSTOM_win_effect);
     }
 
     else {
-        //rgblight_sethsv_noeeprom(0,0,0);   // off
+        rgb_matrix_mode(RGB_MATRIX_CUSTOM_dynamic_effect);
     }
 
     return state;
@@ -221,8 +196,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 void keyboard_post_init_user(void) {
   // Call the post init code.
-  rgblight_enable_noeeprom(); // enables Rgb, without saving settings
-  rgblight_sethsv_noeeprom(0,0,96); // sets the color without saving
+  rgb_matrix_mode(RGB_MATRIX_CUSTOM_dynamic_effect);
 }
 
 const uint16_t PROGMEM esc_combo[] = {KC_SPACE, KC_ESC, COMBO_END};
@@ -230,12 +204,15 @@ const uint16_t PROGMEM lower_bkspc_combo[] = {KC_BACKSPACE, LGUI(KC_LEFT), COMBO
 const uint16_t PROGMEM lower_bkspc_combo2[] = {KC_HOME, RSFT_T(KC_LEFT), COMBO_END};
 const uint16_t PROGMEM bkspc_combo[] = {KC_H, KC_Y, COMBO_END};
 const uint16_t PROGMEM bkspc_combo2[] = {KC_U, RSFT_T(KC_J) , COMBO_END};
+const uint16_t PROGMEM raise_bkspc_combo[] = {KC_4, KC_7, COMBO_END};
+const uint16_t PROGMEM raise_bkspc_combo2[] = {KC_CIRC, KC_PLUS, COMBO_END};
 combo_t key_combos[] = {
     COMBO(esc_combo, KC_ESC),
     COMBO(bkspc_combo, KC_BACKSPACE),
     COMBO(bkspc_combo2, KC_BACKSPACE),
     COMBO(lower_bkspc_combo, KC_BACKSPACE),
     COMBO(lower_bkspc_combo2, KC_BACKSPACE),
-    //COMBO(backspace_combo, KC_BACKSPACE), // keycodes with modifiers are possible too!
+    COMBO(raise_bkspc_combo, KC_BACKSPACE),
+    COMBO(raise_bkspc_combo2, KC_BACKSPACE),
 };
 
