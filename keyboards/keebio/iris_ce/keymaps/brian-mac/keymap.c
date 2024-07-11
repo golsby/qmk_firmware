@@ -16,12 +16,59 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_WIN_CTL_ALT] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, KC_LALT),
 };
 
+enum custom_keycodes {
+    RH_WIR = SAFE_RANGE,
+    RH_SHA,
+    RH_REN,
+    RH_MON,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case RH_WIR:
+        if (record->event.pressed) {
+            // when keycode QMKBEST is pressed
+            SEND_STRING("SetDisplayMode m=wireframe enter ");
+        } else {
+            // when keycode QMKBEST is released
+        }
+        break;
+    case RH_SHA:
+        if (record->event.pressed) {
+            // when keycode QMKBEST is pressed
+            SEND_STRING("SetDisplayMode m=shaded enter ");
+        } else {
+            // when keycode QMKBEST is released
+        }
+        break;
+    case RH_REN:
+        if (record->event.pressed) {
+            // when keycode QMKBEST is pressed
+            SEND_STRING("SetDisplayMode m=rendered enter ");
+        } else {
+            // when keycode QMKBEST is released
+        }
+        break;
+    case RH_MON:
+        if (record->event.pressed) {
+            // when keycode QMKBEST is pressed
+            SEND_STRING("SetDisplayMode m=monochrome enter ");
+        } else {
+            // when keycode QMKBEST is released
+        }
+        break;
+    }
+
+    return true;
+};
+
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_MAC] = LAYOUT(  //  _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                              KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+     KC_ESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                              KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -58,18 +105,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RHINO] = LAYOUT(  //  _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN    _WIN
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                              KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+     KC_ESC,LCA(KC_1),LCA(KC_2),LCA(KC_3),LCA(KC_4),LCA(KC_5),                       LCA(KC_6),LCA(KC_7),LCA(KC_8),LCA(KC_9),LCA(KC_0),LCA(KC_BSPC),
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
+     XXXXXXX,LCA(KC_Q),LCA(KC_W),LCA(KC_E),LCA(KC_R),LCA(KC_T),                       LCA(KC_Y),LCA(KC_U),LCA(KC_I),LCA(KC_O),LCA(KC_P),XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-   KC_LCTL,LALT_T(KC_A),LGUI_T(KC_S),LCTL_T(KC_D),LSFT_T(KC_F),KC_G,               KC_H,RSFT_T(KC_J),RCTL_T(KC_K),LGUI_T(KC_L),RALT_T(KC_SCLN), KC_QUOT,
+     XXXXXXX,LCA(KC_A),LCA(KC_S),LCA(KC_D),QK_LEAD,LCA(KC_G),                         LCA(KC_H),LCA(KC_J),LCA(KC_K),LCA(KC_L),LCA(KC_SCLN),LCA(KC_QUOT),
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ESC,           KC_BSPC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+     XXXXXXX,LCMD(KC_Z),LCMD(KC_X),LCMD(KC_C),LCMD(KC_V),XXXXXXX,KC_ESC,     KC_BSPC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-  // outer layer changes
-  //                                TL_LOWR, KC_LGUI, KC_SPC,                    KC_ENT,  KC_RALT, TL_UPPR
-  // inner layer changes
-                        TD(TD_WIN_CTL_ALT),  MO(_LOWER),   KC_SPC,               KC_ENT,  MO(_RAISE),  KC_RALT
+                                    _______,MO(_LOWER),_______,                  _______,MO(_RAISE),_______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -77,11 +121,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(  //  _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR,  XXXXXXX,                             KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, LGUI(LSFT(LCTL(KC_4))),
+     XXXXXXX, DM_REC1, DM_REC2, KC_LCBR, KC_RCBR,  XXXXXXX,                             KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, LGUI(LSFT(LCTL(KC_4))),
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-LGUI(KC_TAB),  XXXXXXX, XXXXXXX,  KC_LPRN, KC_RPRN, XXXXXXX,                            KC_BSPC, KC_HOME,   KC_UP,   KC_PGUP,   KC_P0,   _______,
+LGUI(KC_TAB), DM_PLY1, DM_PLY2,  KC_LPRN, KC_RPRN, XXXXXXX,                            KC_BSPC, KC_HOME,   KC_UP,   KC_PGUP,   KC_P0,   _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-XXXXXXX,LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, LGUI(KC_LEFT),KC_LEFT, XXXXXXX,KC_RIGHT,LGUI(KC_RIGHT), LGUI(KC_RIGHT),
+TG(_RHINO),LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), _______, LGUI(KC_LEFT),KC_LEFT, XXXXXXX,KC_RIGHT,LGUI(KC_RIGHT), LGUI(KC_RIGHT),
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
    TG(_LOWER),LCMD(KC_Z),LCMD(KC_X),LCMD(KC_C),LCMD(KC_V),MO(_FUNC),KC_ESC,       KC_BSPC, XXXXXXX, KC_END,   KC_DOWN,   KC_PGDN,   KC_BSLS, TG(_LOWER),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -92,11 +136,11 @@ XXXXXXX,LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), ______
 
   [_WIN_LOWER] = LAYOUT(  //  _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR,  XXXXXXX,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PSCR,
+     XXXXXXX, DM_REC1, DM_REC2, KC_LCBR, KC_RCBR,  XXXXXXX,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PSCR,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-LGUI(KC_TAB),  XXXXXXX, XXXXXXX,  KC_LPRN, KC_RPRN, XXXXXXX,                        KC_BSPC, LCTL(KC_HOME),KC_UP,KC_PGUP,  KC_P0,  _______,
+LGUI(KC_TAB),  DM_PLY1, DM_PLY2,  KC_LPRN, KC_RPRN, XXXXXXX,                        KC_BSPC, LCTL(KC_HOME),KC_UP,KC_PGUP,  KC_P0,  _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-XXXXXXX,LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC),_______,     KC_HOME, KC_LEFT, XXXXXXX, KC_RIGHT, KC_END, KC_END,
+TG(_RHINO),LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC),_______,     KC_HOME, KC_LEFT, XXXXXXX, KC_RIGHT, KC_END, KC_END,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      TG(_LOWER),LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V), XXXXXXX, KC_ESC,   KC_BSPC, XXXXXXX, LCTL(KC_END),   KC_DOWN,   KC_PGDN,   KC_BSLS, TG(_LOWER),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -110,7 +154,7 @@ XXXXXXX,LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC),_______
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      RGB_TOG, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_SLASH, KC_BACKSLASH,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     RGB_VAI, KC_MPRV, KC_MNXT, KC_VOLU, KC_BRIU, KC_MINS,                            KC_PLUS,  KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_ASTERISK, _______,
+     RGB_VAI, KC_MPRV, KC_MNXT, KC_VOLU, KC_BRIU, KC_MINS,                            KC_PLUS,  KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_ASTERISK, KC_GRAVE,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      RGB_VAD, KC_MSTP, KC_MPLY, KC_VOLD, KC_BRID, KC_UNDS, KC_ESC,          KC_BSPC,  KC_EQL,  KC_KP_1,  KC_KP_2, KC_KP_3, KC_PDOT, TG(_RAISE),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -121,13 +165,13 @@ XXXXXXX,LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC),_______
 
  [_MOUSE] = LAYOUT(  //  _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     QK_BOOT, TO(_MAC),TO(_WIN),TG(_FUNC),TG(_LOWER), _______,                        _______, _______, _______, _______, _______, QK_CLEAR_EEPROM,
+     QK_BOOT, TO(_MAC),TO(_WIN),TG(_FUNC),TG(_LOWER), TG(_RHINO),                        _______, _______, _______, _______, _______, QK_CLEAR_EEPROM,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     RGB_TOG, DM_REC1, DM_PLY1,  _______, _______, _______,                           KC_BTN3,  KC_WH_D, KC_MS_U, XXXXXXX, XXXXXXX, XXXXXXX,
+     RGB_TOG, _______, _______,  _______, _______, _______,                           KC_BTN3,  KC_WH_D, KC_MS_U, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, _______, _______, KC_BTN2, KC_BTN1, _______,                            KC_BTN1,  KC_MS_L, XXXXXXX, KC_MS_R, KC_BTN2, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     TG(_RAISE), _______, _______, KC_BTN3, _______, _______, _______,          _______, _______, KC_WH_U,  KC_MS_D, XXXXXXX, XXXXXXX, TG(_LOWER),
+     TG(_LOWER), _______, _______, KC_BTN3, _______, _______, _______,          _______, _______, KC_WH_U,  KC_MS_D, XXXXXXX, XXXXXXX, TG(_RAISE),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   _______, TG(_MOUSE), TG(_MOUSE)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -154,7 +198,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LSFT_T(KC_F):
         case RSFT_T(KC_J):
-            return TAPPING_TERM -80;
+            return TAPPING_TERM -280;
         default:
             return TAPPING_TERM;
     }
@@ -163,6 +207,73 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 void keyboard_post_init_user(void) {
   // Call the post init code.
   rgb_matrix_mode(RGB_MATRIX_CUSTOM_dynamic_effect);
+}
+
+void leader_start_user(void) {
+    // Do something when the leader key is pressed
+}
+void leader_end_user(void) {
+    if (leader_sequence_one_key(LCA(KC_1))) {
+        tap_code16(LCTL(LALT(KC_6)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_2))) {
+        tap_code16(LCTL(LALT(KC_7)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_3))) {
+        tap_code16(LCTL(LALT(KC_8)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_4))) {
+        tap_code16(LCTL(LALT(KC_9)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_5))) {
+        tap_code16(LCTL(LALT(KC_0)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_Q))) {
+        tap_code16(LCTL(LALT(KC_Y)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_W))) {
+        tap_code16(LCTL(LALT(KC_U)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_E))) {
+        tap_code16(LCTL(LALT(KC_I)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_R))) {
+        tap_code16(LCTL(LALT(KC_O)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_T))) {
+        tap_code16(LCTL(LALT(KC_P)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_A))) {
+        tap_code16(LCTL(LALT(KC_H)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_S))) {
+        tap_code16(LCTL(LALT(KC_J)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_D))) {
+        tap_code16(LCTL(LALT(KC_K)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_F))) {
+        tap_code16(LCTL(LALT(KC_L)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_G))) {
+        tap_code16(LCTL(LALT(KC_SCLN)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_Z))) {
+        tap_code16(LCTL(LALT(KC_B)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_X))) {
+        tap_code16(LCTL(LALT(KC_N)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_C))) {
+        tap_code16(LCTL(LALT(KC_M)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_V))) {
+        tap_code16(LCTL(LALT(KC_COMM)));
+    }
+    else if (leader_sequence_one_key(LCA(KC_B))) {
+        tap_code16(LCTL(LALT(KC_DOT)));
+    }
+
 }
 
 const uint16_t PROGMEM esc_combo[] = {KC_SPACE, KC_ESC, COMBO_END};
@@ -187,3 +298,12 @@ combo_t key_combos[] = {
     COMBO(raise_bkspc_combo2, KC_BACKSPACE),
 };
 
+// Shift + esc = ~
+const key_override_t tilde_esc_override = ko_make_basic(MOD_MASK_SHIFT, KC_ESC, S(KC_GRV));
+// GUI + esc = `
+const key_override_t grave_esc_override = ko_make_basic(MOD_MASK_CTRL, KC_ESC, KC_GRV);
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&tilde_esc_override,
+	&grave_esc_override,
+	NULL
+};
