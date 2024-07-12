@@ -16,7 +16,7 @@
 #define I2C1_SCL_PIN GP11
 
 // BG
-#define TAPPING_TERM 400  // must hold 400ms to get the hold behavior, otherwise this is a tap.
+#define TAPPING_TERM 250
 #define TAPPING_TERM_PER_KEY
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define SPLIT_LAYER_STATE_ENABLE

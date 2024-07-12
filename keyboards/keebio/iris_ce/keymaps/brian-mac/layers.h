@@ -2,6 +2,7 @@
 
 enum custom_layers {
     _MAC,
+    _COLEMAK_DH,
     _WIN,
     _RHINO,
     _LOWER,
