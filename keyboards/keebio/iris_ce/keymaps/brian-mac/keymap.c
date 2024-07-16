@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
 LGUI(KC_TAB), DM_PLY1, DM_PLY2,  KC_LPRN, KC_RPRN, XXXXXXX,                            KC_BSPC, KC_HOME,   KC_UP,   KC_PGUP,   KC_EXCLAIM,   _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-TG(_RHINO),LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC), KC_MINS, LGUI(KC_LEFT),KC_LEFT, XXXXXXX,KC_RIGHT,LGUI(KC_RIGHT), LGUI(KC_RIGHT),
+TG(_RHINO),LALT_T(XXXXXXX),LCTL_T(XXXXXXX),LGUI_T(KC_LBRC),LSFT_T(KC_RBRC),KC_MINS,   LGUI(KC_LEFT),KC_LEFT, XXXXXXX,KC_RIGHT,LGUI(KC_RIGHT), LGUI(KC_RIGHT),
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
    TG(_LOWER),LCMD(KC_Z),LCMD(KC_X),LCMD(KC_C),LCMD(KC_V),KC_UNDS,KC_ESC,       KC_BSPC, KC_EQL, KC_END,   KC_DOWN,   KC_PGDN,   KC_BSLS, TG(_LOWER),
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -289,9 +289,8 @@ const uint16_t PROGMEM esc_combo[] = {KC_SPACE, KC_ESC, COMBO_END};
 const uint16_t PROGMEM bkspc_combo[] = {RSFT_T(KC_J),RCTL_T(KC_L), COMBO_END};
 const uint16_t PROGMEM win_bkspc_combo[] = {RSFT_T(KC_J),LGUI_T(KC_L), COMBO_END};
 const uint16_t PROGMEM mac_cmk_bkspc_combo[] = {RSFT_T(KC_N),RCTL_T(KC_I), COMBO_END};
-const uint16_t PROGMEM lower_bkspc_combo[] = {KC_HOME, KC_PGUP, COMBO_END};
-const uint16_t PROGMEM win_lower_bkspc_combo[] = {LCTL(KC_HOME),KC_PGUP, COMBO_END};
-const uint16_t PROGMEM raise_bkspc_combo[] = {KC_KP_4, KC_KP_6, COMBO_END};
+const uint16_t PROGMEM lower_bkspc_combo[] = {KC_LEFT, KC_RIGHT, COMBO_END};
+const uint16_t PROGMEM raise_bkspc_combo[] = {KC_4, KC_6, COMBO_END};
 
 //Combos for special characters
 const uint16_t PROGMEM unds_combo[] = {KC_V, KC_B, COMBO_END};
@@ -312,7 +311,6 @@ combo_t key_combos[] = {
     COMBO(win_bkspc_combo, KC_BACKSPACE),
     COMBO(mac_cmk_bkspc_combo, KC_BACKSPACE),
     COMBO(lower_bkspc_combo, KC_BACKSPACE),
-    COMBO(win_lower_bkspc_combo, KC_BACKSPACE),
     COMBO(raise_bkspc_combo, KC_BACKSPACE),
 
     COMBO(unds_combo, KC_UNDS),
