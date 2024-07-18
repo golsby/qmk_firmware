@@ -297,13 +297,16 @@ const uint16_t PROGMEM unds_combo[] = {KC_V, KC_B, COMBO_END};
 const uint16_t PROGMEM eql_combo[] = {KC_N, KC_M, COMBO_END};
 const uint16_t PROGMEM plus_combo[] = {KC_H, RSFT_T(KC_J), COMBO_END};
 const uint16_t PROGMEM minus_combo[] = {LSFT_T(KC_F), KC_G, COMBO_END};
+const uint16_t PROGMEM ques_combo[] = {KC_Y, KC_U, COMBO_END};
+const uint16_t PROGMEM excl_combo[] = {KC_R, KC_T, COMBO_END};
 
 // colemak special character combos
 const uint16_t PROGMEM unds_combo_cmk[] = {KC_D, KC_V, COMBO_END};
 const uint16_t PROGMEM eql_combo_cmk[] = {KC_K, KC_H, COMBO_END};
 const uint16_t PROGMEM plus_combo_cmk[] = {KC_M, RSFT_T(KC_N), COMBO_END};
 const uint16_t PROGMEM minus_combo_cmk[] = {LSFT_T(KC_T), KC_G, COMBO_END};
-
+const uint16_t PROGMEM ques_combo_cmk[] = {KC_J, KC_L, COMBO_END};
+const uint16_t PROGMEM excl_combo_cmk[] = {KC_P, KC_B, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(esc_combo, KC_ESC),
@@ -317,12 +320,16 @@ combo_t key_combos[] = {
     COMBO(eql_combo, KC_EQL),
     COMBO(minus_combo, KC_MINS),
     COMBO(plus_combo, KC_PLUS),
+    COMBO(ques_combo, KC_QUES),
+    COMBO(excl_combo, KC_EXLM),
 
     // colemak special character combos
     COMBO(unds_combo_cmk, KC_UNDS),
     COMBO(eql_combo_cmk, KC_EQL),
     COMBO(minus_combo_cmk, KC_MINS),
     COMBO(plus_combo_cmk, KC_PLUS),
+    COMBO(ques_combo_cmk, KC_QUES),
+    COMBO(excl_combo_cmk, KC_EXLM),
 };
 
 // Shift + esc = ~
