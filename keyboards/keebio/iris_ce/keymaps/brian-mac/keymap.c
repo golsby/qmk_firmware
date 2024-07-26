@@ -34,6 +34,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 const custom_shift_key_t custom_shift_keys[] = {
   {KC_DOT , KC_COLN}, // Shift . is ?
   {KC_COMM, KC_SEMICOLON}, // Shift , is !
+  {KC_BSLS, KC_QUES},
   //{KC_MINS, KC_EQL }, // Shift - is =
   //{KC_COLN, KC_SCLN}, // Shift : is ;
 };
