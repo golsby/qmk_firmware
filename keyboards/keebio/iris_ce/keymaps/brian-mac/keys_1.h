@@ -17,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 
-  [_COLEMAK_DH] = LAYOUT(  //  _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC    _MAC
+  [_COLEMAK_DH] = LAYOUT(  //  _COLEMAK_DH    _COLEMAK_DH    _COLEMAK_DH    _COLEMAK_DH    _COLEMAK_DH    _COLEMAK_DH    _COLEMAK_DH    _COLEMAK_DH
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -40,12 +40,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LGUI, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  MO(_WIN_LOWER),   MO(_SYMBOLS),  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_BSLS, KC_RSFT,
+     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  MO(_WIN_LOWER),  MO(_SYMBOLS), KC_K,  KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     KC_LCTL, KC_LSFT, KC_SPC,                    KC_ENT,  KC_RSFT, KC_RALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
+  [_COLEMAK_DH_WIN] = LAYOUT(  //  _MAC    _COLEMAK_DH_WIN    _COLEMAK_DH_WIN    _COLEMAK_DH_WIN    _COLEMAK_DH_WIN    _COLEMAK_DH_WIN    _COLEMAK_DH_WIN
+  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
+     KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_DEL,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     KC_LGUI, KC_A,    KC_R,   KC_S,    KC_T,     KC_G,                               KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,  MO(_WIN_LOWER),  MO(_SYMBOLS), KC_K,  KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
+                                    KC_LCTL,  KC_LSFT, KC_SPC,                   KC_ENT,  KC_RSFT, KC_RALT
+                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+  ),
 
   [_RHINO] = LAYOUT(  //  _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO    _RHINO
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
@@ -124,7 +137,7 @@ XXXXXXX,LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),XXXXXXX,KC_ESC,   MO(_MOUSE)
 
  [_MOUSE] = LAYOUT(  //  _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE    _MOUSE
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     QK_BOOT, TO(_MAC),TO(_WIN),TG(_LOWER),TG(_SYMBOLS), TG(_NUMPAD),            TO(_COLEMAK_DH), _______, _______, _______, _______, QK_CLEAR_EEPROM,
+     QK_BOOT, TO(_MAC),TO(_WIN),TG(_LOWER),TG(_SYMBOLS), TG(_NUMPAD),            TO(_COLEMAK_DH), TO(_COLEMAK_DH_WIN), _______, _______, _______, QK_CLEAR_EEPROM,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      RGB_TOG, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX,  KC_WH_D, KC_MS_U, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
