@@ -78,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(  //  _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER    _LOWER
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     XXXXXXX, DM_REC1, DM_REC2, KC_VOLU, XXXXXXX,  XXXXXXX,                             KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, LGUI(LSFT(LCTL(KC_4))),
+     XXXXXXX, DM_REC1, DM_REC2, KC_VOLU, KC_BRMU,  XXXXXXX,                             KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, LGUI(LSFT(LCTL(KC_4))),
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-LGUI(KC_TAB), DM_PLY1, DM_PLY2, KC_VOLD, XXXXXXX, XXXXXXX,                            XXXXXXX, KC_HOME,   KC_UP,   KC_PGUP,   KC_EXCLAIM,   _______,
+LGUI(KC_TAB), DM_PLY1, DM_PLY2, KC_VOLD, KC_BRMD, XXXXXXX,                            XXXXXXX, KC_HOME,   KC_UP,   KC_PGUP,   KC_EXCLAIM,   _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
 _______,LALT_T(XXXXXXX),LCTL_T(XXXXXXX),LGUI_T(XXXXXXX),LSFT_T(XXXXXXX),KC_MINS,   LGUI(KC_LEFT),KC_LEFT, XXXXXXX,KC_RIGHT,LGUI(KC_RIGHT), LGUI(KC_RIGHT),
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
@@ -93,9 +93,9 @@ _______,LALT_T(XXXXXXX),LCTL_T(XXXXXXX),LGUI_T(XXXXXXX),LSFT_T(XXXXXXX),KC_MINS,
 
   [_WIN_LOWER] = LAYOUT(  //  _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER    _WIN_LOWER
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     XXXXXXX, DM_REC1, DM_REC2, KC_VOLU, XXXXXXX, XXXXXXX,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PSCR,
+     XXXXXXX, DM_REC1, DM_REC2, KC_VOLU, KC_BRIU, XXXXXXX,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PSCR,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-LALT(KC_TAB),  DM_PLY1, DM_PLY2,KC_VOLD, XXXXXXX, XXXXXXX,                            XXXXXXX, LCTL(KC_HOME),KC_UP,KC_PGUP,  KC_EXCLAIM,  _______,
+LALT(KC_TAB),  DM_PLY1, DM_PLY2,KC_VOLD, KC_BRID, XXXXXXX,                            XXXXXXX, LCTL(KC_HOME),KC_UP,KC_PGUP,  KC_EXCLAIM,  _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
 _______,LALT_T(XXXXXXX), LCTL_T(XXXXXXX),LGUI_T(XXXXXXX),LSFT_T(XXXXXXX),_______,     KC_HOME, KC_LEFT, XXXXXXX, KC_RIGHT, KC_END, KC_END,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
@@ -120,14 +120,14 @@ XXXXXXX,LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),XXXXXXX,KC_ESC,   MO(_MOUSE)
   ),
 
   [_SYMBOLS] = LAYOUT(  //  _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS    _SYMBOLS
-  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
+  //┌────────┬────────┬────────┬────────┬────────┬────────┐  6                        ┌────────┬────────┬────────┬────────┬────────┬────────┐
      KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX , KC_EXLM,                           XXXXXXX, KC_BSLS, KC_COLN, KC_SLSH, KC_PIPE, XXXXXXX,
+     KC_UP  , XXXXXXX, KC_LBRC, KC_RBRC, KC_EXLM , KC_QUES,                           KC_EQL,  KC_BSLS, KC_COLN, KC_SLSH, KC_PIPE, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, KC_MINS,                            KC_EQL,  KC_QUOT, KC_DQUO, KC_GRAVE, XXXXXXX,   XXXXXXX,
+     KC_LEFT, XXXXXXX, KC_LPRN, KC_RPRN, KC_UNDS, KC_MINS,                            KC_PLUS, KC_QUOT, KC_DQUO, KC_GRAVE,KC_SCLN, KC_RIGHT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5    ,MO(_MOUSE),       _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX,
+     KC_DOWN, KC_1,    KC_DLR,  KC_HASH, KC_AT,   KC_PERC, MO(_MOUSE),       _______, KC_CIRC, KC_AMPR, KC_ASTR, XXXXXXX, XXXXXXX, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   _______, _______,  _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
