@@ -24,12 +24,12 @@ const uint16_t PROGMEM ques_combo_cmk[] = {KC_J, KC_L, COMBO_END};
 const uint16_t PROGMEM excl_combo_cmk[] = {KC_P, KC_B, COMBO_END};
 
 combo_t key_combos[] = {
-    COMBO(esc_combo, KC_ESC),
-    COMBO(bkspc_combo, KC_BACKSPACE),
-    COMBO(sym_bkspc_combo, KC_BACKSPACE),
-    COMBO(mac_cmk_bkspc_combo, KC_BACKSPACE),
-    COMBO(lower_bkspc_combo, KC_BACKSPACE),
-    COMBO(raise_bkspc_combo, KC_BACKSPACE),
+    //COMBO(esc_combo, KC_ESC),
+    //COMBO(bkspc_combo, KC_BACKSPACE),
+    //COMBO(sym_bkspc_combo, KC_BACKSPACE),
+    //COMBO(mac_cmk_bkspc_combo, KC_BACKSPACE),
+    //COMBO(lower_bkspc_combo, KC_BACKSPACE),
+    //COMBO(raise_bkspc_combo, KC_BACKSPACE),
 
     COMBO(unds_combo, KC_UNDS),
     //COMBO(eql_combo, KC_EQL),
